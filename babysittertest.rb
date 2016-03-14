@@ -41,6 +41,12 @@ class BabySitterTest < Test::Unit::TestCase
     assert_equal(60, result)
   end
 
+  def test_pay_8hr_bedtime_to_midnight
+    babysitter = Babysitter.new
+    result = babysitter.calculatePay(22, 24)
+    assert_equal(16, result)
+  end
+
 
 
 end
