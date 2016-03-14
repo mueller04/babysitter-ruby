@@ -20,8 +20,13 @@ class BabySitterTest < Test::Unit::TestCase
   end
 
   def test_end_time_before_6pm
+    result = calculatePay(17, 17)
+    assert_equal("end time must not be before 6pm or after 4am", result)
+  end
+
+  def test_end_time_after_4am
     result = calculatePay(17, 5)
-    assert_equal("end time must not be before 6pm", result)
+    assert_equal("end time must not be before 6pm or after 4am", result)
   end
 
 end
