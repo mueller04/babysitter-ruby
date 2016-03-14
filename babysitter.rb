@@ -26,6 +26,10 @@ class Babysitter
   end
 
   def sumPay(start_time, end_time)
+    if end_time < 5
+      end_time += 24
+    end
+
     total = 0
     limit = end_time
     for counter in start_time..limit

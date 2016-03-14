@@ -51,6 +51,12 @@ class BabySitterTest < Test::Unit::TestCase
     assert_equal(16, result)
   end
 
+  def test_beginning_to_end
+    babysitter = Babysitter.new
+    result = babysitter.calculatePay(17, 4)
+    assert_equal(140, result)
+  end
+
 
 
 end
