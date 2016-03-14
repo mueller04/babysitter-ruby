@@ -5,6 +5,7 @@ class Babysitter
 @@bed_time=22
 @@midnight_pay=8
 @@midnight=24
+@@end_pay=16
 
   def calculatePay(start_time, end_time)
     message = validateTime(start_time, end_time)
@@ -30,8 +31,10 @@ class Babysitter
     for counter in start_time..limit
       if counter < @@bed_time
         total += @@start_time_pay
-      elsif counter > @@bed_time
+      elsif counter > @@bed_time && counter <= @@midnight
         total += @@midnight_pay
+      elsif counter > @@midnight
+        total += @@end_pay
       end
         counter += 1
     end

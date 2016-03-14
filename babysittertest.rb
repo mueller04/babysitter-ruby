@@ -3,8 +3,6 @@ require 'test/unit'
 
 class BabySitterTest < Test::Unit::TestCase
 
-  #babysitter = ::Babysitter.new
-
   def test_start_time_before_5pm
     babysitter = Babysitter.new
     result = babysitter.calculatePay(16, 10)
@@ -42,6 +40,12 @@ class BabySitterTest < Test::Unit::TestCase
   end
 
   def test_pay_8hr_bedtime_to_midnight
+    babysitter = Babysitter.new
+    result = babysitter.calculatePay(22, 24)
+    assert_equal(16, result)
+  end
+
+  def test_pay_16hr_midnight_to_end
     babysitter = Babysitter.new
     result = babysitter.calculatePay(22, 24)
     assert_equal(16, result)
